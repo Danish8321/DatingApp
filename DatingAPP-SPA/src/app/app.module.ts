@@ -1,3 +1,4 @@
+import { ErrorInterceptorProvider } from './services/error.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,7 +12,7 @@ import { RegisterComponent } from './register/register.component';
 @NgModule({
   declarations: [AppComponent, NavComponent, HomeComponent, RegisterComponent],
   imports: [BrowserModule, HttpClientModule, FormsModule],
-  providers: [],
+  providers: [ErrorInterceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

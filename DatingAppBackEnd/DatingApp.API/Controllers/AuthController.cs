@@ -55,9 +55,18 @@ namespace DatingApp.API.Controllers
                 return Unauthorized();
             }
 
+            return Ok(new
+            {
+                token = GenerateJwtToken(userFromRepo),
+                userFromRepo
+            });
+        }
+
+        private string GenerateJwtToken(User user)
+        {
             var claims = new[] {
-                new Claim(ClaimTypes.NameIdentifier,userFromRepo.Id.ToString()),
-                new Claim(ClaimTypes.Name,userFromRepo.Username)
+                new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
+                new Claim(ClaimTypes.Name,user.Username)
                 };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:Token").Value));
@@ -75,10 +84,7 @@ namespace DatingApp.API.Controllers
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
-            return Ok(new
-            {
-                token = tokenHandler.WriteToken(token)
-            });
+            return tokenHandler.WriteToken(token);
         }
     }
 

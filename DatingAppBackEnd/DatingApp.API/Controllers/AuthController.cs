@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace DatingApp.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("datingapi/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
     {

@@ -8,6 +8,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -51,6 +52,7 @@ export function getToken() {
         blacklistedRoutes: ['localhost:5000/datingapi/auth'],
       },
     }),
+    NgxGalleryModule,
   ],
   providers: [ErrorInterceptorProvider],
   bootstrap: [AppComponent],

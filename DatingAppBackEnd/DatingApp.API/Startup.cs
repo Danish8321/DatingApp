@@ -52,6 +52,8 @@ namespace DatingApp.API
                         ValidateAudience = false
                     };
                 });
+
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -20,6 +20,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+import { FileUploadModule } from 'ng2-file-upload';
 
 export function getToken() {
   return localStorage.getItem('token');
@@ -36,6 +39,8 @@ export function getToken() {
     MessagesComponent,
     MemberCardComponent,
     MemberDetailComponent,
+    MemberEditComponent,
+    PhotoEditorComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +58,7 @@ export function getToken() {
       },
     }),
     NgxGalleryModule,
+    FileUploadModule
   ],
   providers: [ErrorInterceptorProvider],
   bootstrap: [AppComponent],

@@ -10,6 +10,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { TimeagoModule } from 'ngx-timeago';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -52,6 +53,7 @@ export function getToken() {
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
+    TimeagoModule.forRoot(),
     BsDatepickerModule.forRoot(),
     TabsModule.forRoot(),
     JwtModule.forRoot({

@@ -54,6 +54,7 @@ namespace DatingApp.API
                 });
 
             services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
+            services.AddScoped<LogUserActivity>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

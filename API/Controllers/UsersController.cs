@@ -25,7 +25,7 @@ namespace API.Controllers
             {
                 return NotFound();
             }
-            //test
+
             return user;
         }
     }

@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AccountService } from './_services/account.service';
+import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
-import { HomeComponent } from "./home/home.component";
 
 @Component({
     selector: 'app-root',
@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
     users: any;
 
     ngOnInit(): void {
-        this.getUsers();
         this.setCurrentUser();
     }
 
@@ -33,13 +32,5 @@ export class AppComponent implements OnInit {
         const user = JSON.parse(userString);
 
         this, this.accountService.currentUser.set(user);
-    }
-
-    getUsers() {
-        this.http.get('https://localhost:5001/api/users').subscribe({
-            next: (response) => (this.users = response),
-            error: (err) => console.log(err),
-            complete: () => console.log(),
-        });
     }
 }

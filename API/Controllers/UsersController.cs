@@ -19,19 +19,6 @@ namespace API.Controllers
             return Ok(users);
         }
 
-        // [HttpGet("{id:int}")]
-        // public async Task<ActionResult<AppUser>> GetUser(int id)
-        // {
-        //     var user = await userRepository.GetUserByIdAsync(id);
-
-        //     if (user is null)
-        //     {
-        //         return NotFound();
-        //     }
-
-        //     return user;
-        // }
-
         [HttpGet("{username}")]
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {

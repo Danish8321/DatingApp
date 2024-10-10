@@ -1,4 +1,3 @@
-using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -23,7 +22,8 @@ public class TokenService(IConfiguration configuration) : ITokenService
 
     var claims = new List<Claim>
     {
-      new(ClaimTypes.NameIdentifier,user.UserName)
+            new(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new(ClaimTypes.Name, user.UserName)
     };
 
     var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);

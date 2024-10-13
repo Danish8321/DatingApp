@@ -1,4 +1,3 @@
-using System.Security.Claims;
 using API.DTO;
 using API.Extensions;
 using API.Helpers;
